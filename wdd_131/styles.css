@@ -1,0 +1,71 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+body, h1, h2, p, ol, li {
+  margin: 10;
+  padding: 25;
+  font-size: 20;
+}
+
+/* Set default font family and color */
+body, li {
+  font-family: 'Times New Roman';
+  color: #333; /* Dark gray color */
+  
+}
+
+/* Style header */
+.title {
+  padding: 20px;
+  text-align: center;
+  font-family:'Times New Roman';
+  
+}
+
+.title h1 {
+  font-size: 36px;
+  text-align:center;
+  
+  
+}
+
+.title h2 {
+  font-size: 24px;
+  color:#006EB6;
+  text-align:center;
+  text-underline-position: below;
+}
+
+/* Style main content */
+.content {
+  max-width: 450px; /* Limit content width */
+  margin: 0 auto; /* Center content horizontally */
+  padding: 20px;
+}
+
+/* Style paragraphs */
+p {
+  margin-bottom: 15px;
+  margin: 10px;
+}
+
+/* Style ordered list */
+.does-list {
+  list-style-type: decimal;
+  margin-left: 15px;
+  margin: 20px;
+  letter-spacing: normal;
+  
+}
+
+/* Style footer */
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 150px; /* Set logo width */
+  height: auto; /* Maintain aspect ratio */
+  padding: 25px;
+}
