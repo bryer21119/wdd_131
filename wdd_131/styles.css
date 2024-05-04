@@ -69,3 +69,8 @@ footer {
   height: auto; /* Maintain aspect ratio */
   padding: 25px;
 }
+.logo2 {
+  width: 150px; /* Set logo width */
+  height: auto; /* Maintain aspect ratio */
+  padding: 25px;
+}
