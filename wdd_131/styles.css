@@ -59,10 +59,15 @@ footer {
 .logo {
   width: 150px; /* Set logo width */
   height: auto; /* Maintain aspect ratio */
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.logo2 {
-  width: 150px; /* Set logo width */
-  height: auto; /* Maintain aspect ratio */
-  color: #333;
+.dark .logo {
+  background-image: url('byui-logo_white.png'); /* Dark mode logo */
+}
+
+.light .logo {
+  background-image: url('byui-logo_blue.png'); /* Light mode logo */
 }
