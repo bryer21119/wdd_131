@@ -65,14 +65,10 @@ footer {
   height: 150px; /* Set logo height */
   background-repeat: no-repeat;
   background-size: contain;
+  background-image: url('byui-logo_blue.png'); /* Default logo */
 }
 
-/* Dark mode logo */
+/* Dark mode */
 .dark .logo {
-  background-image: url('byui-logo_white.png');
-}
-
-/* Light mode logo */
-.light .logo {
-  background-image: url('byui-logo_blue.png');
+  background-image: url('byui-logo_white.png'); /* Dark mode logo */
 }

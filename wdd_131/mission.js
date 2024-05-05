@@ -1,16 +1,17 @@
-const themeSelector = document.getElementById("theme-select");
-
-function changeTheme() {
+document.addEventListener("DOMContentLoaded", function() {
+    const themeSelect = document.getElementById("theme-select");
     const body = document.body;
-    const logo = document.querySelector('.logo');
-    
-    if (themeSelector.value === "dark") {
-        body.classList.add("dark");
-        logo.style.backgroundImage = "url('byui-logo_white.png')";
-    } else {
-        body.classList.remove("dark");
-        logo.style.backgroundImage = "url('byui-logo_blue.png')";
-    }
-}
 
-themeSelector.addEventListener('change', changeTheme);
+    function changeTheme() {
+        if (themeSelect.value === "dark") {
+            body.classList.add("dark");
+        } else {
+            body.classList.remove("dark");
+        }
+    }
+
+    themeSelect.addEventListener('change', changeTheme);
+
+    // Initial call to set the initial theme
+    changeTheme();
+});
