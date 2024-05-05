@@ -59,18 +59,20 @@ footer {
   text-align: center;
 }
 
+/* Logo container */
 .logo {
   width: 150px; /* Set logo width */
-  height: auto; /* Maintain aspect ratio */
-  padding: 25px;
+  height: 150px; /* Set logo height */
   background-repeat: no-repeat;
   background-size: contain;
 }
 
+/* Dark mode logo */
 .dark .logo {
-  background-image: url('byui-logo_white.png'); /* Dark mode logo */
+  background-image: url('byui-logo_white.png');
 }
 
+/* Light mode logo */
 .light .logo {
-  background-image: url('byui-logo_blue.png'); /* Light mode logo */
+  background-image: url('byui-logo_blue.png');
 }
