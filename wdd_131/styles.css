@@ -11,7 +11,6 @@ body, h1, h2, p, ol, li {
 body, li {
   font-family: 'Times New Roman';
   color: #333; /* Dark gray color */
-  
 }
 
 /* Style header */
@@ -19,14 +18,11 @@ body, li {
   padding: 20px;
   text-align: center;
   font-family:'Times New Roman';
-  
 }
 
 .title h1 {
   font-size: 36px;
   text-align:center;
-  
-  
 }
 
 .title h2 {
@@ -55,7 +51,6 @@ p {
   margin-left: 15px;
   margin: 20px;
   letter-spacing: normal;
-  
 }
 
 /* Style footer */
