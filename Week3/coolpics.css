@@ -1,0 +1,85 @@
+/* Importing Mooli font for headlines */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* CSS Custom Properties */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--primary-font); /* Primary font */
+  font-size: 1.2em; /* Base font size */
+  color: var(--text-dark); /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--secondary-font); /* Secondary font for headlines */
+  font-weight: normal; /* Resetting font weight */
+  margin-top: 0; /* Removing default margin */
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color); /* Link color */
+  text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+header, footer {
+  background-color: var(--secondary-color); /* Background color for header and footer */
+  padding: 10px 20px; /* Padding for header and footer content */
+}
+
+main {
+  padding: 20px; /* Padding for main content */
+}
+
+img {
+  max-width: 100%; /* Make images responsive */
+  height: 250px; /* Set image height */
+  width: 250px; /* Set image width */
+  object-fit: cover; /* Crop images */
+}
+
+/* Menu Button */
+.menu-btn {
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  color: var(--text-light); /* Text color */
+  cursor: pointer; /* Change cursor to pointer */
+  font-family: var(--primary-font); /* Primary font */
+  font-size: 1.2em; /* Font size */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Gap between grid items */
+}
+/* Media Queries */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+  }
+  .menu-btn {
+    display: none; /* Hide menu button on wider screens */
+  }
+}
