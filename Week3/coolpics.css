@@ -37,49 +37,88 @@ a:hover {
   text-decoration: underline; /* Underline on hover */
 }
 
-header, footer {
-  background-color: var(--secondary-color); /* Background color for header and footer */
-  padding: 10px 20px; /* Padding for header and footer content */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color); /* Background color for header */
+  padding: 10px 20px; /* Padding for header content */
+  text-align: center; /* Center text */
 }
 
-main {
-  padding: 20px; /* Padding for main content */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color); /* Background color for footer */
+  padding: 10px 20px; /* Padding for footer content */
+  text-align: center; /* Center text */
 }
+
+
+nav ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline; /* Display navigation items inline */
+  margin-right: 20px; /* Add space between navigation items */
+}
+
+
 
 img {
-  max-width: 100%; /* Make images responsive */
-  height: 250px; /* Set image height */
-  width: 250px; /* Set image width */
-  object-fit: cover; /* Crop images */
+  width: 250px; /* Set width */
+  height: 250px; /* Set height */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  margin: 10px; /* Add margin for spacing */
 }
 
-/* Menu Button */
-.menu-btn {
-  background: none; /* Remove button background */
-  border: none; /* Remove button border */
-  color: var(--text-light); /* Text color */
-  cursor: pointer; /* Change cursor to pointer */
-  font-family: var(--primary-font); /* Primary font */
-  font-size: 1.2em; /* Font size */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Padding for main content */
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Three columns layout */
   gap: 20px; /* Gap between grid items */
-}
-/* Media Queries */
-@media (min-width: 700px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-  }
+  justify-content: center;
 }
 
-@media (min-width: 1000px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
-  }
-  .menu-btn {
-    display: none; /* Hide menu button on wider screens */
+
+.welcome {
+  margin-top: 20px; /* Add space above the heading */
+  text-align: center; /* Center text */
+}
+
+/* Footer Styles */
+footer {
+  position: fixed; /* Fixed positioning */
+  bottom: 0; /* Stick to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  background-color: var(--secondary-color); /* Background color */
+  padding: 10px 20px; /* Padding */
+  text-align: left; /* Align text to the left */
+}
+
+footer p {
+  margin-left: 20px; /* Adjust margin to move the text to the right */
+}
+
+/* Media Queries */
+@media (max-width: 999px) {
+  nav ul li {
+    display: block; /* Change navigation items to block on smaller screens */
+    margin-bottom: 10px; /* Add space between navigation items */
   }
 }
