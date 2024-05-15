@@ -122,3 +122,10 @@ footer p {
     margin-bottom: 10px; /* Add space between navigation items */
   }
 }
+@media screen and (min-width: 760){
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+}

@@ -8,11 +8,23 @@ body, h1, h2, p, ol, li {
 }
 
 /* Set default font family and color */
-body, li {
+body {
   font-family: 'Times New Roman';
   color: #333; /* Dark gray color */
+  
 }
+main {
+  line-height: 1.5em;
+}
+.dark { 
+  background-color: #333;
+  color: white;
 
+}
+.dark #subtitle {
+  color:#57b0ec;
+
+}
 /* Style header */
 .title {
   padding: 20px;
@@ -62,12 +74,4 @@ footer {
   padding: 25px;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.dark .logo {
-  background-image: url('byui-logo_white.png'); /* Dark mode logo */
-}
-
-.light .logo {
-  background-image: url('byui-logo_blue.png'); /* Light mode logo */
 }

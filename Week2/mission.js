@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+
     const themeSelect = document.getElementById("theme-select");
     const body = document.body;
     const logo = document.querySelector('.logo');
@@ -17,4 +17,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial call to set the initial theme
     changeTheme();
-});
