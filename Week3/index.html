@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
+        <button class="menu-btn">☰</button>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -38,5 +39,14 @@
     <footer>
         <p>©2023 Not a real site 😀</p>
     </footer>
+
+    <!-- Modal for image viewer -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script src="coolpics.js"></script>
 </body>
 </html>
