@@ -7,52 +7,101 @@ body {
   }
   
   header {
-    background-color: #4CAF50;
+    background-color: #2106ea;
     color: white;
     padding: 10px;
     display: flex;
     justify-content: center;
-    list-style-type: none;
-  }
+    list-style-type: right;
 
-  li {
-    text-align: right;
-    justify-content: right;
   }
 
   h1 {
-    margin: 0;
     text-align: center;
-    justify-content: right;
+    justify-content: center;
+    display: flex;
 
+  }
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    justify-content: center;
+  }
+
+  h3 {
+    width:75px;
+    margin:75px ;
+    float:right;
+    padding-top: 100px;
+    
+  }
+
+  h4 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+  h5 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+  p {
+    font-size: 1.0em;
+    justify-items: left;
+    
+  }
+
+  .text-container {
+    text-align: left;
+  }
+
+  form{
+    justify-content: right;
   }
   
   nav {
     display: flex;
-    padding: 0;
     
   }
   
   nav a {
     color: white;
+    padding: 200%;
     text-decoration: none;
-    padding: 10px;
+    writing-mode: horizontal;
   }
   
   main {
     padding: 20px;
   }
+
+  ul{
+    list-style: none;
+    display: flex;
+    word-spacing: 20px;
+  }
   
+  a {
+    padding: 20px;
+    text-align: right;
+
+  }
+
+  li {
+    padding: 20px;
+    justify-content: right;
+  }
+
   article {
     background-color: #f1f1f1;
     padding: 20px;
     border-radius: 5px;
   }
   
-  h2 {
-    margin-top: 0;
-    text-align: center;
-  }
+
   .center {
     display: block;
     margin-left: auto;
@@ -60,42 +109,35 @@ body {
     width: 25%;
   }
 
-  h3 {
-      width:50px;
-      margin:50px ;
-      float:right;
-      top: 50px;
-  }
-
-  p{
-    justify-content: center;
-  }
- 
+  
   aside {
     float: right;
-    margin-right: 0px;
-    justify-content: center;
-    top: auto;
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-  
+
   .filters {
     clear: both;
     margin-top: 20px;
-    justify-content: right;
-    justify-items: right;
-   
+
   }
-  
+
+  .container {
+    text-align: left;
+    margin: 0 auto; 
+    max-width: 600px; 
+  }
+
   .filters p {
-    margin-bottom: 5px;
-    
-    
-  }
+    margin-bottom: 75px;
+    }
   
   footer {
     background-color: #4CAF50;
     color: white;
     text-align: left;
-    padding: 10px;
+    padding: 40px;
   }
   
