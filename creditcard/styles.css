@@ -28,11 +28,11 @@ body {
 .card-back {
     position: fixed;
     top: 295px;
-    right: 350px; 
+    right: 480px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: end;
-    width: 25%;
-    height: 18%;
+    width: 20%;
+    height: 20%;
     z-index: -1;
     
 }
@@ -106,8 +106,8 @@ input[type="Submit"] {
     border: 1px solid #ccc;
     border-radius: 20px;
     position: relative;
-    right: -262px;
-    bottom: -33px;
+    right: -250px;
+    bottom: -45px;
 }
 
 
