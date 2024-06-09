@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('addParticipant').addEventListener('click', () => {
         participantCount++;
         const newParticipantHtml = participantTemplate(participantCount);
-        const addButton = document.getElementById('addParticipant');
-        addButton.insertAdjacentHTML('beforebegin', newParticipantHtml);
+        const participantsFieldset = document.getElementById('participants');
+        participantsFieldset.insertAdjacentHTML('beforeend', newParticipantHtml);
+        
+        // Update participant count in hidden input
+        document.getElementById('participantCount').value = participantCount;
     });
 
     // Event listener for form submission
@@ -19,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Gather form data
         const formData = new FormData(event.target);
         const participants = [];
+        const participantCount = formData.get('participantCount'); // Get total participant count
         
         // Extract participant data
         for (let i = 1; i <= participantCount; i++) {

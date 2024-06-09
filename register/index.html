@@ -9,7 +9,7 @@
 <body>
     <h1>Registration Form</h1>
 
-    <form id="registrationForm" action="./summary.html" method="post">
+    <form id="registrationForm" method="post">
         <fieldset id="participants">
             <section class="participant-section">
                 <label for="name1">Name:</label>
@@ -22,6 +22,9 @@
 
         <button type="button" id="addParticipant" class="add-button">Add Participant</button>
         <button type="submit">Submit</button>
+
+        <!-- Hidden input to track participant count -->
+        <input type="hidden" id="participantCount" name="participantCount" value="1">
     </form>
 
     <script src="templates.js" type="module"></script>
