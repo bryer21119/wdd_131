@@ -3,19 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let participantCount = 1; // Initial participant count
 
     const addParticipantButton = document.getElementById('addParticipant');
+    const registrationForm = document.getElementById('registrationForm');
     const participantsFieldset = document.getElementById('participantsFieldset');
+    const submitButton = document.getElementById('submitButton');
 
-    addParticipantButton.addEventListener('click', () => {
+    // Function to add participant section
+    function addParticipantSection() {
         participantCount++; // Increment participant count
 
-        // Create a new participant section
+        // Create new participant section
         const newParticipantSection = document.createElement('section');
         newParticipantSection.classList.add('participant');
         newParticipantSection.id = `participant${participantCount}`;
 
-        // Update HTML for participant fields (adjust as per your form structure)
+        // Update HTML for participant fields
         newParticipantSection.innerHTML = `
-            <!-- Participant input fields -->
             <label for="name${participantCount}">Name:</label>
             <input type="text" id="name${participantCount}" name="name${participantCount}" required>
             <label for="fee${participantCount}">Fee:</label>
@@ -24,13 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Append new participant section to fieldset
         participantsFieldset.appendChild(newParticipantSection);
-    });
+    }
 
-    // Additional logic for form submission (already discussed earlier)
-    document.getElementById('registrationForm').addEventListener('submit', (event) => {
+    // Event listener for Add Participant button
+    addParticipantButton.addEventListener('click', addParticipantSection);
+
+    // Event listener for form submission
+    registrationForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission
 
-        // Gather form data, calculate total fee, store in sessionStorage, redirect to summary.html
-        // Add this logic as per the previous instructions provided
+        // Gather form data
+        const formData = new FormData(registrationForm);
+        const participants = [];
+
+        // Extract participant data
+        for (let i = 1; i <= participantCount; i++) {
+            const name = formData.get(`name${i}`);
+            const fee = parseFloat(formData.get(`fee${i}`) || 0);
+            participants.push({ name, fee });
+        }
+
+        // Calculate total fee
+        const totalFee = participants.reduce((total, participant) => total + participant.fee, 0);
+
+        // Store data in sessionStorage for retrieval on summary page
+        sessionStorage.setItem('registrationData', JSON.stringify({ totalFee, participants }));
+
+        // Redirect to summary page
+        window.location.href = './summary.html';
     });
 });

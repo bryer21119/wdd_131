@@ -7,27 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Registration Form</h1>
+    <form id="registrationForm" action="./summary.html" method="post">
+        <h1>Registration Form</h1>
 
-    <form id="registrationform">
-        <fieldset id="participants">
-            <section class="participant-section">
+        <fieldset id="participantsFieldset">
+            <section class="participant" id="participant1">
                 <label for="name1">Name:</label>
                 <input type="text" id="name1" name="name1" required>
                 <label for="fee1">Fee:</label>
-                <input type="number" id="fee1" name="fee1" required>
-                <button type="button" class="remove-participant" onclick="removeParticipant(this)">Remove</button>
+                <input type="number" id="fee1" name="fee1" step="0.01" min="0" required>
             </section>
         </fieldset>
 
-        <button type="button" id="addParticipant" class="add-button">Add Participant</button>
-        <button type="submit">Submit</button>
-
-        <!-- Hidden input to track participant count -->
-        <input type="hidden" id="participantCount" name="participantCount" value="1">
+        <button type="button" id="addParticipant">Add Participant</button>
+        <button type="submit" id="submitButton">Submit</button>
     </form>
 
-    <script src="templates.js" type="module"></script>
-    <script src="register.js" type="module"></script>
+    <script src="register.js"></script>
+    <script src="templates.js"></script>
 </body>
 </html>
