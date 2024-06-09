@@ -83,7 +83,7 @@ form button[type="submit"]:hover {
         grid-column: span 2;
     }
 }
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     .participant-form {
         grid-template-columns: repeat(2, 1fr);
     }
