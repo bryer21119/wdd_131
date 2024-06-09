@@ -1,48 +1,36 @@
 // register.js
-import { participantTemplate } from './Templates.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-    let participantCount = 1; // Start with 1 participant initially
+    let participantCount = 1; // Initial participant count
 
-    // Event listener for the "Add Participant" button
-    document.getElementById('addParticipant').addEventListener('click', () => {
-        participantCount++;
-        const newParticipantHtml = participantTemplate(participantCount);
-        const participantsFieldset = document.getElementById('participants');
-        participantsFieldset.insertAdjacentHTML('beforeend', newParticipantHtml);
-        
-        // Update participant count in hidden input
-        document.getElementById('participantCount').value = participantCount;
+    const addParticipantButton = document.getElementById('addParticipant');
+    const participantsFieldset = document.getElementById('participantsFieldset');
+
+    addParticipantButton.addEventListener('click', () => {
+        participantCount++; // Increment participant count
+
+        // Create a new participant section
+        const newParticipantSection = document.createElement('section');
+        newParticipantSection.classList.add('participant');
+        newParticipantSection.id = `participant${participantCount}`;
+
+        // Update HTML for participant fields (adjust as per your form structure)
+        newParticipantSection.innerHTML = `
+            <!-- Participant input fields -->
+            <label for="name${participantCount}">Name:</label>
+            <input type="text" id="name${participantCount}" name="name${participantCount}" required>
+            <label for="fee${participantCount}">Fee:</label>
+            <input type="number" id="fee${participantCount}" name="fee${participantCount}" step="0.01" min="0" required>
+        `;
+
+        // Append new participant section to fieldset
+        participantsFieldset.appendChild(newParticipantSection);
     });
 
-    // Event listener for form submission
+    // Additional logic for form submission (already discussed earlier)
     document.getElementById('registrationForm').addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission
-        
-        // Gather form data
-        const formData = new FormData(event.target);
-        const participants = [];
-        const participantCount = formData.get('participantCount'); // Get total participant count
-        
-        // Extract participant data
-        for (let i = 1; i <= participantCount; i++) {
-            const name = formData.get(`name${i}`);
-            const fee = parseFloat(formData.get(`fee${i}`) || 0);
-            participants.push({ name, fee });
-        }
-        
-        // Calculate total fee
-        const totalFee = participants.reduce((total, participant) => total + participant.fee, 0);
 
-        // Store data in sessionStorage for retrieval on summary page
-        sessionStorage.setItem('registrationData', JSON.stringify({ totalFee, participants }));
-
-        // Redirect to summary page
-        window.location.href = './summary.html';
+        // Gather form data, calculate total fee, store in sessionStorage, redirect to summary.html
+        // Add this logic as per the previous instructions provided
     });
 });
-
-// Function to remove participant section
-window.removeParticipant = function(button) {
-    button.parentNode.remove();
-};
