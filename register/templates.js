@@ -1,16 +1,10 @@
 export function participantTemplate(count) {
     return `
-        <section class="participant${count}" id="participant${count}">
+        <section class="participant-section">
             <label for="name${count}">Name:</label>
-            <input type="text" id="name${count}" name="name${count}">
+            <input type="text" id="name${count}" name="name${count}" required>
             <label for="fee${count}">Fee:</label>
-            <input type="number" id="fee${count}" name="fee${count}">
+            <input type="number" id="fee${count}" name="fee${count}" required>
         </section>
-    `;
-}
-
-export function successTemplate({ name, participantCount, totalFee }) {
-    return `
-        <p>Thank you ${name} for registering. You have registered ${participantCount} participants and owe $${totalFee} in Fees.</p>
     `;
 }
