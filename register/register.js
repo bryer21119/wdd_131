@@ -1,3 +1,4 @@
+// register.js
 import { participantTemplate } from './Templates.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,39 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
         addButton.insertAdjacentHTML('beforebegin', newParticipantHtml);
     });
 
-    // Form submission handling
+    // Event listener for form submission
     document.getElementById('registrationForm').addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission
-
-        const totalFee = totalFees();
-        const participants = gatherParticipantData();
+        
+        // Gather form data
+        const formData = new FormData(event.target);
+        const participants = [];
+        
+        // Extract participant data
+        for (let i = 1; i <= participantCount; i++) {
+            const name = formData.get(`name${i}`);
+            const fee = parseFloat(formData.get(`fee${i}`) || 0);
+            participants.push({ name, fee });
+        }
+        
+        // Calculate total fee
+        const totalFee = participants.reduce((total, participant) => total + participant.fee, 0);
 
         // Store data in sessionStorage for retrieval on summary page
         sessionStorage.setItem('registrationData', JSON.stringify({ totalFee, participants }));
 
         // Redirect to summary page
-        window.location.href = 'summary.html';
+        window.location.href = './summary.html';
     });
 });
-
-// Function to gather participant data from the form
-function gatherParticipantData() {
-    const participants = [];
-    const participantSections = document.querySelectorAll('.participant-section');
-    participantSections.forEach(section => {
-        const name = section.querySelector('input[type="text"]').value;
-        const fee = parseFloat(section.querySelector('input[type="number"]').value || 0);
-        participants.push({ name, fee });
-    });
-    return participants;
-}
-
-// Function to calculate total fees from all participants
-function totalFees() {
-    let feeElements = document.querySelectorAll("[id^=fee]");
-    feeElements = [...feeElements];
-    return feeElements.reduce((total, feeElement) => total + parseFloat(feeElement.value || 0), 0);
-}
 
 // Function to remove participant section
 window.removeParticipant = function(button) {

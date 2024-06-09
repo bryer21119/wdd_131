@@ -1,3 +1,4 @@
+// Templates.js
 export function participantTemplate(count) {
     return `
         <section class="participant-section">

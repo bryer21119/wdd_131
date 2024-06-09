@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Participant Registration</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="registrationForm" action="#">
-        <fieldset class="participant-form" id="participants">
-            <section class="participant1" id="participant1">
+    <h1>Registration Form</h1>
+
+    <form id="registrationForm" action="./summary.html" method="post">
+        <fieldset id="participants">
+            <section class="participant-section">
                 <label for="name1">Name:</label>
-                <input type="text" id="name1" name="name1">
+                <input type="text" id="name1" name="name1" required>
                 <label for="fee1">Fee:</label>
-                <input type="number" id="fee1" name="fee1">
+                <input type="number" id="fee1" name="fee1" required>
+                <button type="button" class="remove-participant" onclick="removeParticipant(this)">Remove</button>
             </section>
-            <button type="button" id="addParticipant" class="add-button">Add Participant</button>
         </fieldset>
+
+        <button type="button" id="addParticipant" class="add-button">Add Participant</button>
         <button type="submit">Submit</button>
     </form>
-    <div id="summary" style="display:all;"></div>
-    
-    <script src="templates.js" type="module"></script>
+
+    <script src="Templates.js" type="module"></script>
     <script src="register.js" type="module"></script>
 </body>
 </html>
