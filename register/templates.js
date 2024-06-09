@@ -5,6 +5,7 @@ export function participantTemplate(count) {
             <input type="text" id="name${count}" name="name${count}" required>
             <label for="fee${count}">Fee:</label>
             <input type="number" id="fee${count}" name="fee${count}" required>
+            <button type="button" class="remove-participant" onclick="removeParticipant(this)">Remove</button>
         </section>
     `;
 }

@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('addParticipant').addEventListener('click', () => {
         participantCount++;
         const newParticipantHtml = participantTemplate(participantCount);
-        document.getElementById('participants').insertAdjacentHTML('beforeend', newParticipantHtml);
+        const addButton = document.getElementById('addParticipant');
+        addButton.insertAdjacentHTML('beforebegin', newParticipantHtml);
     });
 
     // Form submission handling
@@ -43,3 +44,8 @@ function totalFees() {
     feeElements = [...feeElements];
     return feeElements.reduce((total, feeElement) => total + parseFloat(feeElement.value || 0), 0);
 }
+
+// Function to remove participant section
+window.removeParticipant = function(button) {
+    button.parentNode.remove();
+};
