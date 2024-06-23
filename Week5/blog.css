@@ -51,6 +51,7 @@ body {
   p {
     font-size: 1.0em;
     justify-items: left;
+    justify-content: left;
     
   }
 

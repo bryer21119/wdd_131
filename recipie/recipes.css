@@ -1,0 +1,123 @@
+/* Global styles */
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: 'Roboto', sans-serif; 
+    --secondary-font: 'Amatic SC', cursive;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body expands to full viewport height */
+}
+
+
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 80px; /* Adjust as needed */
+    height: auto;
+}
+
+header h1 {
+    font-family: var(--secondary-font);
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+main {
+    flex: 1; /* Take remaining vertical space */
+    padding-top: 5em; /* Ensure content starts below header */
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.search-form input[type="text"] {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+    width: 70%; /* 70% of the viewport width */
+    max-width: 600px; /* Maximum width for the input */
+}
+
+
+.search-form button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+    cursor: pointer;
+}
+
+.recipe {
+    margin-bottom: 2em;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1em; /* Adjust padding as needed */
+    text-align: right;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+}
+
+.social a {
+    margin-left: 1em; 
+    justify-content: center;
+}
+
+.social img {
+    width: 30px; 
+    height: auto;
+    justify-content: right;
+}
+
+footer p {
+    margin: 25px; 
+    padding-right: 1200px;
+    justify-content: center;
+    text-align: center;
+}
