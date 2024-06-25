@@ -8,16 +8,25 @@ function generateRatingStars(rating) {
     const filledCount = Math.round(rating);
     const emptyCount = maxStars - filledCount;
 
-    const filledStarsHtml = filledStars.repeat(filledCount);
-    const emptyStarsHtml = emptyStars.repeat(emptyCount);
-
-    return `${filledStarsHtml}${emptyStarsHtml}`;
+    let ratingHtml = '<span class="rating" role="img" aria-label="Rating: ' + rating + ' out of 5 stars">';
+    
+    for (let i = 0; i < filledCount; i++) {
+        ratingHtml += '<span aria-hidden="true" class="icon-star">' + filledStars + '</span>';
+    }
+    
+    for (let i = 0; i < emptyCount; i++) {
+        ratingHtml += '<span aria-hidden="true" class="icon-star-empty">' + emptyStars + '</span>';
+    }
+    
+    ratingHtml += '</span>';
+    
+    return ratingHtml;
 }
 
 function generateRecipe(recipeData) {
     const recipeSection = document.querySelector('.recipe');
+    
     const { title, description, rating } = recipeData;
-
     const ratingHtml = generateRatingStars(rating);
 
     const recipeHtml = `
@@ -39,10 +48,4 @@ const exampleRecipeData = {
     rating: 4
 };
 
-function searchRecipes(query) {
-    if (query.toLowerCase() === 'example') {
-        generateRecipe(exampleRecipeData);
-    } else {
-        document.querySelector('.recipe').innerHTML = '<p>No recipes found.</p>';
-    }
-}
+generateRecipe(exampleRecipeData);
