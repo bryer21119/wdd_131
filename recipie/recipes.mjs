@@ -1,6 +1,5 @@
 // recipes.js
 
-
 function generateRatingStars(rating) {
     const maxStars = 5;
     const filledStars = '⭐';
@@ -13,14 +12,10 @@ function generateRatingStars(rating) {
     const emptyStarsHtml = emptyStars.repeat(emptyCount);
 
     return `${filledStarsHtml}${emptyStarsHtml}`;
-
 }
-
 
 function generateRecipe(recipeData) {
     const recipeSection = document.querySelector('.recipe');
-
-    
     const { title, description, rating } = recipeData;
 
     const ratingHtml = generateRatingStars(rating);
@@ -44,4 +39,10 @@ const exampleRecipeData = {
     rating: 4
 };
 
-generateRecipe(exampleRecipeData);
+function searchRecipes(query) {
+    if (query.toLowerCase() === 'example') {
+        generateRecipe(exampleRecipeData);
+    } else {
+        document.querySelector('.recipe').innerHTML = '<p>No recipes found.</p>';
+    }
+}

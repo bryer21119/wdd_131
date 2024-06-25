@@ -1,11 +1,11 @@
-/* Global styles */
+@import url("https://fonts.googleapis.com/css2?family=family=Amatic+SC&display=swap");
 :root {
-    --primary-color: #1B98E0;
-    --secondary-color: #59c3c3;
-    --text-dark: #333;
-    --text-light: #ebebeb;
-    --primary-font: 'Roboto', sans-serif; 
-    --secondary-font: 'Amatic SC', cursive;
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: "Amatic SC";
 }
 
 body {
@@ -16,10 +16,8 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body expands to full viewport height */
+    min-height: 100vh;
 }
-
-
 
 header {
     background-color: var(--primary-color);
@@ -27,31 +25,39 @@ header {
     padding: 1em;
     text-align: center;
     width: 100%;
-    position: fixed;
+    position: flex;
     top: 0;
-    z-index: 1000; /* Ensure header stays on top */
+    z-index: 1000;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .logo img {
-    max-width: 80px; /* Adjust as needed */
-    height: auto;
+    max-width: 100px;
+    height: 100px;
+    position: static;
+    left: 20%;
+    top: 10%;
+    transform: translate(10%, -10%);
 }
 
 header h1 {
     font-family: var(--secondary-font);
     font-size: 1.5em;
     margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin: 0px;
+
 }
 
 main {
     flex: 1; /* Take remaining vertical space */
-    padding-top: 5em; /* Ensure content starts below header */
+    padding-top: 1em; /* Ensure content starts below header */
 }
 
 .search-form {
@@ -61,14 +67,13 @@ main {
 }
 
 .search-form input[type="text"] {
-    padding: 0.5em;
+    padding: .8em;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px; /* Rounded corners on the left */
     width: 70%; /* 70% of the viewport width */
     max-width: 600px; /* Maximum width for the input */
 }
-
 
 .search-form button {
     padding: 0.5em 1em;
@@ -102,6 +107,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: right;
+    color: black;
 }
 
 .social a {
@@ -113,11 +119,14 @@ footer {
     width: 30px; 
     height: auto;
     justify-content: right;
+    color: black;
+    padding-right: 30px;
 }
 
 footer p {
-    margin: 25px; 
-    padding-right: 1200px;
-    justify-content: center;
+    margin: 15px; 
+    padding-right: 1000px;
+    justify-content: right;
     text-align: center;
+    display: flex;
 }
