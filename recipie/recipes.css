@@ -175,7 +175,7 @@ footer {
 
 .social a {
     margin-left: 1em; 
-    justify-content: center;
+    justify-content: right;
 }
 
 .social img {
@@ -183,7 +183,7 @@ footer {
     height: auto;
     justify-content: right;
     color: black;
-    margin-right: 45px;
+    /* margin-right: 45px; */
     padding-right: -80%;
     
 }
