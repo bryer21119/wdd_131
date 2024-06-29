@@ -42,7 +42,7 @@ function generateRecipe(recipeData) {
     recipeSection.innerHTML = recipeHtml;
 }
 
-export default [
+const recipes = [
     {
         name: "Apple Crisp",
         description: "This apple crisp recipe is a perfect fall dessert, combining tart apples with a sweet, crumbly topping.",
@@ -52,7 +52,7 @@ export default [
     },
     {
         name: "Chocolate Chip Cookies",
-        description: "Decandent chocolate, and soft melt in your mouth cookies.",
+        description: "Decadent chocolate, and soft melt in your mouth cookies.",
         rating: 5,
         tags: ["Year Round Dessert", "Chocolate Chips", "Cookies"],
         image: "images/chocolate-chip-cookies.jpg"
@@ -72,5 +72,8 @@ export default [
         image: "images/chicken-curry.webp"
     },
 ];
+
+export default recipes;
+
 
 generateRecipe(exampleRecipeData);

@@ -1,4 +1,3 @@
-// Import recipes from recipes.mjs
 import recipes from './recipes.mjs';
 
 // Function to generate a random number between 0 and num-1
@@ -21,15 +20,11 @@ function tagsTemplate(tags) {
 function ratingTemplate(rating) {
   const maxStars = 5;
   const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 !== 0;
-  const emptyStars = maxStars - fullStars - (halfStar ? 1 : 0);
+  const emptyStars = maxStars - fullStars;
 
   let starsHTML = '';
   for (let i = 0; i < fullStars; i++) {
     starsHTML += '<span class="icon-star">⭐</span>';
-  }
-  if (halfStar) {
-    starsHTML += '<span class="icon-star-half-alt">⭐</span>';
   }
   for (let i = 0; i < emptyStars; i++) {
     starsHTML += '<span class="icon-star-empty">☆</span>';
@@ -57,7 +52,7 @@ function recipeTemplate(recipe) {
   `;
 }
 
-// Function to render recipes into the DOM
+// Function to render a recipe into the DOM
 function renderRecipe(recipe) {
   const recipeContainer = document.querySelector('.recipe');
   recipeContainer.innerHTML = recipeTemplate(recipe);
@@ -71,12 +66,11 @@ function init() {
 
 // Function to filter recipes based on a search query
 function filterRecipes(query) {
-  const filteredRecipes = recipes.filter(recipe =>
+  return recipes.filter(recipe =>
     recipe.name.toLowerCase().includes(query.toLowerCase()) ||
     recipe.description.toLowerCase().includes(query.toLowerCase()) ||
     recipe.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
   );
-  return filteredRecipes;
 }
 
 // Function to handle search form submission
