@@ -1,7 +1,3 @@
-// main.js
-
-// main.js
-
 // Import recipes from recipes.mjs
 import recipes from './recipes.mjs';
 
@@ -18,7 +14,7 @@ function getRandomListEntry(list) {
 
 // Function to generate HTML markup for tags
 function tagsTemplate(tags) {
-  return tags.map(tag => `<li>${tag}</li>`).join('');
+  return tags.map(tag => `<h3 class="tag">${tag}</h3>`).join('');
 }
 
 // Function to generate HTML markup for ratings
@@ -39,40 +35,38 @@ function ratingTemplate(rating) {
     starsHTML += '<span class="icon-star-empty">☆</span>';
   }
 
-  return `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">${starsHTML}</span>`;
+  return `<div class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">${starsHTML}</div>`;
 }
 
 // Function to generate HTML markup for a recipe
 function recipeTemplate(recipe) {
   return `
-    <figure class="recipe">
-      <img src="${recipe.image}" alt="image of ${recipe.name} on a plate" />
-      <figcaption>
-        <ul class="recipe__tags">
+    <article class="recipe-article">
+      <div class="recipe-image-container">
+        <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+        <div class="tags">
           ${tagsTemplate(recipe.tags)}
-        </ul>
-        <h2><a href="#">${recipe.name}</a></h2>
-        <p class="recipe__ratings">
-          ${ratingTemplate(recipe.rating)}
-        </p>
-        <p class="recipe__description">
-          ${recipe.description}
-        </p>
-      </figcaption>
-    </figure>
+        </div>
+      </div>
+      <div class="recipe-content">
+        <h2 class="recipe-title">${recipe.name}</h2>
+        ${ratingTemplate(recipe.rating)}
+        <p class="recipe-description">${recipe.description}</p>
+      </div>
+    </article>
   `;
 }
 
 // Function to render recipes into the DOM
-function renderRecipes(recipeList) {
-  const recipesContainer = document.getElementById('recipes-container');
-  recipesContainer.innerHTML = recipeList.map(recipe => recipeTemplate(recipe)).join('');
+function renderRecipe(recipe) {
+  const recipeContainer = document.querySelector('.recipe');
+  recipeContainer.innerHTML = recipeTemplate(recipe);
 }
 
 // Function to initialize the page with a random recipe
 function init() {
   const randomRecipe = getRandomListEntry(recipes);
-  renderRecipes([randomRecipe]);
+  renderRecipe(randomRecipe);
 }
 
 // Function to filter recipes based on a search query
@@ -92,27 +86,17 @@ function searchHandler(e) {
   const query = searchInput.value.trim();
 
   const filteredRecipes = filterRecipes(query);
-  renderRecipes(filteredRecipes);
+  if (filteredRecipes.length > 0) {
+    renderRecipe(filteredRecipes[0]);
+  } else {
+    const recipeContainer = document.querySelector('.recipe');
+    recipeContainer.innerHTML = `<p>No recipes found for "${query}".</p>`;
+  }
 }
 
-// Event listener for the search button
-const searchButton = document.getElementById('search-button');
-searchButton.addEventListener('click', searchHandler);
+// Event listener for the search form submission
+const searchForm = document.querySelector('.search-form');
+searchForm.addEventListener('submit', searchHandler);
 
 // Initialize the page with a random recipe when it loads
-init();
-
-function initializePage() {
-    const searchForm = document.querySelector('.search-form');
-
-    searchForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const searchTerm = this.querySelector('input[type="text"]').value;
-        
-        console.log('Searching for:', searchTerm);
-        searchRecipes(searchTerm);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', initializePage);
+document.addEventListener('DOMContentLoaded', init);

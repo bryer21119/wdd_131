@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=family=Amatic+SC&display=swap");
+ 
 :root {
---primary-color: #1B98E0;
---secondary-color: black;
---text-dark: #333;
---text-light: #ebebeb;
---primary-font: Arial, Helvetica,sans-serif;
---secondary-font: "Amatic SC";
+    --primary-color: #1B98E0;
+    --secondary-color: black;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC";
 }
-
+ 
 body {
     font-family: var(--primary-font);
     color: var(--text-dark);
@@ -18,180 +19,169 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
+ 
 header {
     background-color: var(--primary-color);
     color: var(--text-light);
     padding: 1em;
     text-align: center;
     width: 100%;
-    position: flex;
-    top: 0;
-    z-index: 1000;
 }
-
+ 
 .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
-
+ 
 .logo img {
     max-width: 100px;
     height: 100px;
-    position: static;
-    left: 20%;
-    top: 10%;
     transform: translate(10%, -10%);
 }
-
+ 
 header h1 {
     font-family: var(--secondary-font);
     font-size: 2.5em;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-    margin: 0px;
+    margin: 0.5em;
     display: flex;
-
 }
-
+ 
 .recipe-article {
     display: flex;
     align-items: flex-start;
 }
-
+ 
 .recipe-image {
     max-width: 100%;
     width: 300px;
     height: auto;
-    margin-right: 2em;
-    margin-left: 2em;
-    margin-top: 1.5em;
+    margin: 1.5em 2em 0 2em;
 }
-
+ 
 .recipe-content {
     display: flex;
     flex-direction: column;
     padding: 30px;
 }
-
+ 
 .tags {
     display: flex;
     margin-bottom: 0.9em;
 }
-
+ 
 h3.tag {
-    background-color: #1B98E0;
+    background-color: var(--primary-color);
     color: black;
     padding: 0.3em 0.5em;
-    margin-right: .5em;
-    margin-bottom: 1.5em;
+    margin: 0.5em;
     border-radius: 3px;
     font-size: 0.9em;
     position: relative;
     left: 390px;
-    bottom: 250px;   
+    bottom: 250px;
 }
-
+ 
 .rating {
     display: flex;
     align-items: center;
     margin-top: 0.7em;
 }
-
+ 
+.icon-star, .icon-star-empty {
+    font-size: 1.2em;
+    margin-right: 0.2em;
+}
+ 
 .icon-star {
-    font-size: 1.2em;
     color: gold;
-    margin-right: 0.2em;
 }
-
+ 
 .icon-star-empty {
-    font-size: 1.2em;
     color: grey;
-    margin-right: 0.2em;
 }
-
+ 
 .recipe-title {
-    margin-bottom: 10px;
-    margin-top: 40px;
+    margin: 40px 0 10px;
 }
-
+ 
 .recipe-description {
     margin-top: 30px;
 }
-
+ 
 .search-form {
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
 }
-
+ 
 .search-form input[type="text"] {
-    padding: .8em;
+    padding: 0.8em;
     font-size: 1em;
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px; 
-    width: 100%; 
-    max-width: 600px; 
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    max-width: 600px;
     margin-top: 25px;
 }
-
+ 
 .search-form button {
     padding: 0.5em 1em;
     font-size: 1em;
     border: none;
     background-color: var(--secondary-color);
     color: var(--text-light);
-    border-radius: 0 5px 5px 0; 
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
     margin-top: 25px;
 }
-
+ 
 .recipe {
     margin-bottom: 2em;
 }
-
+ 
 /* Footer styles */
-footer {
+/* footer {
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 1em;
+    padding: 10px;
     text-align: right;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+ 
+footer p {
+    margin: 0;
+    padding: 0 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+} */
 
+footer{
+    background-color: var(--primary-color);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
 .social {
     display: flex;
     justify-content: flex-end;
-    align-items: right;
+    align-items: center;
     color: black;
 }
-
+ 
 .social a {
-    margin-left: 1em; 
-    justify-content: right;
+    margin-left: 1em;
 }
-
+ 
 .social img {
-    width: 30px; 
+    width: 30px;
     height: auto;
-    justify-content: right;
-    color: black;
-    /* margin-right: 45px; */
-    padding-right: -80%;
-    
-}
-
-footer p {
-    margin: 15px; 
-    padding-right: 1000px;
-    justify-content: right;
-    text-align: center;
-    display: flex;
 }

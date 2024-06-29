@@ -42,10 +42,35 @@ function generateRecipe(recipeData) {
     recipeSection.innerHTML = recipeHtml;
 }
 
-const exampleRecipeData = {
-    title: "Example Recipe",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    rating: 4
-};
+export default [
+    {
+        name: "Apple Crisp",
+        description: "This apple crisp recipe is a perfect fall dessert, combining tart apples with a sweet, crumbly topping.",
+        rating: 4,
+        tags: ["Fall Dessert", "Apple", "Crisp"],
+        image: "images/apple-crisp.jpg"
+    },
+    {
+        name: "Chocolate Chip Cookies",
+        description: "Decandent chocolate, and soft melt in your mouth cookies.",
+        rating: 5,
+        tags: ["Year Round Dessert", "Chocolate Chips", "Cookies"],
+        image: "images/chocolate-chip-cookies.jpg"
+    },
+    {
+        name: "German Gooseberry Cake",
+        description: "This is the perfect dessert accompanied by gooseberries and a delicious cake!",
+        rating: 5,
+        tags: ["Christmas Dessert", "Gooseberries", "Cake"],
+        image: "images/german-gooseberry-cake.jpg"
+    },
+    {
+        name: "Chicken Curry",
+        description: "A delicious Indian cuisine that is bound to appease your appetite.",
+        rating: 3,
+        tags: ["Curry", "Chicken", "Indian Cuisine"],
+        image: "images/chicken-curry.webp"
+    },
+];
 
 generateRecipe(exampleRecipeData);
