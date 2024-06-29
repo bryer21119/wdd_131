@@ -16,6 +16,7 @@ function tagsTemplate(tags) {
   return tags.map(tag => `<h3 class="tag">${tag}</h3>`).join('');
 }
 
+
 // Function to generate HTML markup for ratings
 function ratingTemplate(rating) {
   const maxStars = 5;

@@ -50,6 +50,7 @@ const recipes = [
         tags: ["Fall Dessert", "Apple", "Crisp"],
         image: "images/apple-crisp.jpg"
     },
+
     {
         name: "Chocolate Chip Cookies",
         description: "Decadent chocolate, and soft melt in your mouth cookies.",
@@ -57,13 +58,15 @@ const recipes = [
         tags: ["Year Round Dessert", "Chocolate Chips", "Cookies"],
         image: "images/chocolate-chip-cookies.jpg"
     },
+
     {
         name: "German Gooseberry Cake",
         description: "This is the perfect dessert accompanied by gooseberries and a delicious cake!",
         rating: 5,
-        tags: ["Christmas Dessert", "Gooseberries", "Cake"],
+        tags: ["Christmas", "Gooseberries", "Cake"],
         image: "images/german-gooseberry-cake.jpg"
     },
+
     {
         name: "Chicken Curry",
         description: "A delicious Indian cuisine that is bound to appease your appetite.",
@@ -74,6 +77,3 @@ const recipes = [
 ];
 
 export default recipes;
-
-
-generateRecipe(exampleRecipeData);
