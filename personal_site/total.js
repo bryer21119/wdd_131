@@ -39,4 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </ul>
         </div>
     `;
+
+    // Display thank you message
+    const thanksMessage = document.getElementById('thanksMessage');
+    thanksMessage.textContent = "Thanks for your purchase! We hope you enjoy your time!";
 });
