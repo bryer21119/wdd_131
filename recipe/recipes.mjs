@@ -61,7 +61,7 @@ const recipes = [
 
     {
         name: "German Gooseberry Cake",
-        description: "This is the perfect dessert accompanied by gooseberries and a delicious cake!",
+        description: "This is the perfect dessert containing gooseberries and a soft cake with a crumbly top!",
         rating: 5,
         tags: ["Christmas", "Gooseberries", "Cake"],
         image: "images/german-gooseberry-cake.jpg"

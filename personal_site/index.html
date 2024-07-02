@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafting Cruise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="header-title">Rafting Cruise</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#prices">Prices</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="main-section">
+            <h2>Plan Your Perfect Rafting Trip</h2>
+            <img src="images/rafting.jpg" alt="Rafting Image" class="main-image">
+            <p>Customize your rafting adventure with our selection of gear.</p>
+            
+            <form id="raftingForm">
+                <h3>Prices & Quantities</h3>
+                <div class="input-group">
+                    <label for="raft">Raft ($50 each):</label>
+                    <input type="number" id="raft" name="raft" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="paddles">Paddles ($10 each):</label>
+                    <input type="number" id="paddles" name="paddles" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="lifejacket">Lifejacket ($15 each):</label>
+                    <input type="number" id="lifejacket" name="lifejacket" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="waterShoes">Water Shoes ($20 each):</label>
+                    <input type="number" id="waterShoes" name="waterShoes" value="0">
+                </div>
+                <div class="input-group">
+                    <label for="food">Food ($30 each):</label>
+                    <input type="number" id="food" name="food" value="0">
+                </div>
+
+                <!-- Link to navigate to total.html -->
+                <p><a href="total.html" class="view-total-link">View Total</a></p>
+            </form>
+        </section>
+
+        <section id="prices" class="main-section">
+            <h2>Prices</h2>
+            <p>Our prices are competitive and designed to give you the best value for your rafting adventure.</p>
+        </section>
+
+        <section id="faqs" class="main-section">
+            <h2>FAQs</h2>
+            <p>Got questions? Check out our frequently asked questions to learn more about our services.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Rafting Cruise</p>
+        </div>
+    </footer>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
