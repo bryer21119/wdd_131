@@ -10,7 +10,7 @@ body {
 /* Header Styles */
 
 header {
-    background-color: #0077cc;
+    background-color: #B07156; /* Primary color */
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -70,7 +70,7 @@ main {
 
 .rafting-form {
     text-align: left;
-    background-color: #f9f9f9;
+    background-color: #C4A287; /* Accent 2 color */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -89,14 +89,14 @@ main {
 .rafting-form input {
     width: 60px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #533745; /* Secondary color */
     border-radius: 4px;
 }
 
 .rafting-form button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #0077cc;
+    background-color: #533745; /* Secondary color */
     color: white;
     border: none;
     border-radius: 4px;
@@ -107,7 +107,7 @@ main {
 /* Footer Styles */
 
 footer {
-    background-color: #f0f0f0;
+    background-color: #9D9171; /* Accent 1 color */
     padding: 10px;
     text-align: center;
 }

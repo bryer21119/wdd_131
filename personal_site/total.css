@@ -9,14 +9,14 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #C4A287; /* Accent 2 color */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 header {
-    background-color: #333;
+    background-color: #533745; /* Secondary color */
     color: #fff;
     padding: 1rem;
 }
@@ -48,7 +48,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #9D9171; /* Accent 1 color */
 }
 
 main {
@@ -65,7 +65,7 @@ main {
 }
 
 .total-summary-box {
-    border: 1px solid #ccc;
+    border: 1px solid #533745; /* Secondary color */
     padding: 1rem;
     margin-top: 1rem;
 }
@@ -77,7 +77,7 @@ main {
 }
 
 .footer-container {
-    background-color: #333;
+    background-color: #533745; /* Secondary color */
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -94,7 +94,6 @@ main {
         justify-content: center;
     }
 }
-/* total.css */
 
 /* Center align the thank you message */
 .thanks-message {
@@ -104,7 +103,7 @@ main {
 
 /* Example style for total summary box */
 .total-summary-box {
-    border: 1px solid #ccc;
+    border: 1px solid #533745; /* Secondary color */
     padding: 10px;
     margin-top: 20px; /* Adjust as needed for spacing */
 }
