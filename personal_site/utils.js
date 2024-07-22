@@ -1,12 +1,10 @@
-// Utility functions for handling local storage
-
 // Calculate total cost based on input data
 export function calculateTotal(data) {
     const raftCost = data.raft * 50;
     const paddlesCost = data.paddles * 10;
-    const lifejacketCost = data.lifejacket * 15;
-    const waterShoesCost = data.waterShoes * 20;
-    const foodCost = data.food * 30;
+    const lifejacketCost = data.lifejacket * 20;
+    const waterShoesCost = data.waterShoes * 15;
+    const foodCost = data.food * 5;
 
     const total = raftCost + paddlesCost + lifejacketCost + waterShoesCost + foodCost;
     return total;
@@ -20,5 +18,5 @@ export function saveToLocalStorage(data, total) {
 // Retrieve data from local storage
 export function getFromLocalStorage() {
     const raftingData = JSON.parse(localStorage.getItem('raftingData'));
-    return raftingData || { total: 0 };
+    return raftingData || { data: null, total: 0 };
 }
