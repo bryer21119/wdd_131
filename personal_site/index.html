@@ -17,6 +17,7 @@
                     <li><a href="#faqs">FAQs</a></li>
                 </ul>
             </nav>
+            <img src="images/rafting2.jpg" alt="rafting image" class="picture2">
         </div>
     </header>
     <main>
@@ -24,32 +25,18 @@
             <h2>Plan Your Perfect Rafting Trip</h2>
             <img src="images/rafting.jpg" alt="Rafting Image" class="main-image">
             <p>Customize your rafting adventure with our selection of gear.</p>
-            
-            <form id="raftingForm">
-                <h3>Prices & Quantities</h3>
-                <div class="input-group">
-                    <label for="raft">Raft ($50 each):</label>
-                    <input type="number" id="raft" name="raft" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="paddles">Paddles ($10 each):</label>
-                    <input type="number" id="paddles" name="paddles" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="lifejacket">Lifejacket ($15 each):</label>
-                    <input type="number" id="lifejacket" name="lifejacket" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="waterShoes">Water Shoes ($20 each):</label>
-                    <input type="number" id="waterShoes" name="waterShoes" value="0">
-                </div>
-                <div class="input-group">
-                    <label for="food">Food ($30 each):</label>
-                    <input type="number" id="food" name="food" value="0">
-                </div>
-
-                <!-- Link to navigate to total.html -->
-                <p><a href="total.html" class="view-total-link">View Total</a></p>
+            <form id="raftingForm" action="total.html" method="GET">
+                <label for="raft">Rafts:</label>
+                <input type="number" id="raft" name="raft" min="0" required>
+                <label for="paddles">Paddles:</label>
+                <input type="number" id="paddles" name="paddles" min="0" required>
+                <label for="lifejacket">Lifejackets:</label>
+                <input type="number" id="lifejacket" name="lifejacket" min="0" required>
+                <label for="waterShoes">Water Shoes:</label>
+                <input type="number" id="waterShoes" name="waterShoes" min="0" required>
+                <label for="food">Food:</label>
+                <input type="number" id="food" name="food" min="0" required>
+                <button type="submit">Submit</button>
             </form>
         </section>
 
