@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Cost</title>
-    <link rel="stylesheet" href="total.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="total.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <h1 class="header-title">Rafting Cruise</h1>
+            <h1 class="header-title">Snake's Rafting Cruise</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -17,22 +18,20 @@
                     <li><a href="#faqs">FAQs</a></li>
                 </ul>
             </nav>
+            <img src="images/rafting2.jpg" alt="rafting image" class="picture2">
         </div>
     </header>
     <main>
-        <section class="total-section">
+        <section class="main-section">
             <h2>Total Cost</h2>
-            <div id="totalSummary" class="total-summary">
-                <!-- Total cost and itemized costs will be displayed dynamically here -->
-            </div>
+            <div id="totalSummary" class="total-summary"></div>
             <p id="thanksMessage" class="thanks-message">Thanks for your purchase! We hope you enjoy your time!</p>
         </section>
     </main>
     <footer>
         <div class="footer-container">
-            <p>&copy; 2024 Rafting Cruise</p>
+            <p>&copy; 2024 Snake's Rafting Cruise</p>
         </div>
     </footer>
-    <script src="total.js" type="module"></script>
 </body>
 </html>
