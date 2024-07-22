@@ -1,16 +1,18 @@
 /* General Styles */
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0;
 }
 
 /* Header Styles */
-
 header {
-    background-color: #B07156; /* Primary color */
+    background-color: #0077cc;
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -33,33 +35,37 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-right: 1rem;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #555;
 }
 
 /* Main Section Styles */
-
 main {
+    flex: 1;
+    padding: 2rem;
     text-align: center;
 }
 
 .main-section {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-image {
@@ -70,7 +76,7 @@ main {
 
 .rafting-form {
     text-align: left;
-    background-color: #C4A287; /* Accent 2 color */
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -89,14 +95,14 @@ main {
 .rafting-form input {
     width: 60px;
     padding: 8px;
-    border: 1px solid #533745; /* Secondary color */
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .rafting-form button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #533745; /* Secondary color */
+    background-color: #0077cc;
     color: white;
     border: none;
     border-radius: 4px;
@@ -104,10 +110,21 @@ main {
     font-size: 1.2rem;
 }
 
-/* Footer Styles */
+.total-summary {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-top: 1rem;
+}
 
+.thanks-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* Footer Styles */
 footer {
-    background-color: #9D9171; /* Accent 1 color */
+    background-color: #f0f0f0;
     padding: 10px;
     text-align: center;
 }
@@ -120,4 +137,16 @@ footer {
 
 .footer-container p {
     font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
 }
